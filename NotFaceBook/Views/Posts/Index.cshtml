@@ -1,0 +1,48 @@
+﻿@model IEnumerable<NotFaceBook.Models.Classes.Post>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    @*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.postText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postLike)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.postText) at @Html.DisplayFor(modelItem => item.postDateTime)<br/>
+            @Html.DisplayFor(modelItem => item.postLike) Likes<br />
+            @Html.ActionLink("Like", "Like", new { id = item.postId })
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.postDateTime)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.postLike)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.postId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.postId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.postId })
+        </td>*@
+    </tr>
+}
+
+</table>

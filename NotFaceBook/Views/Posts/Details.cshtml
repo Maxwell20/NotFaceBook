@@ -1,0 +1,43 @@
+﻿@model NotFaceBook.Models.Classes.Post
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.postText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postLike)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postLike)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.postId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
